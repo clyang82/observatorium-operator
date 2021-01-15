@@ -3,3 +3,38 @@ resources:
 - name: obs
   kind: Observatorium
   apiVersion: core.observatorium.io/v1alpha1
+- name: deployment
+  kind: Deployment
+  apiVersion: apps/v1
+  labelSelector:
+    app.kubernetes.io/part-of: observatorium
+- name: service
+  kind: Service
+  apiVersion: v1
+  labelSelector:
+    app.kubernetes.io/part-of: observatorium
+- name: serviceAccount
+  kind: ServiceAccount
+  apiVersion: v1
+  labelSelector:
+    app.kubernetes.io/part-of: observatorium
+- name: secret
+  kind: Secret
+  apiVersion: v1
+  labelSelector:
+    app.kubernetes.io/part-of: observatorium
+- name: configMap
+  kind: ConfigMap
+  apiVersion: v1
+  labelSelector:
+    app.kubernetes.io/part-of: observatorium
+- name: role
+  kind: Role
+  apiVersion: rbac.authorization.k8s.io/v1
+  labelSelector:
+    app.kubernetes.io/part-of: observatorium
+- name: roleBinding
+  kind: RoleBinding
+  apiVersion: v1
+  labelSelector:
+    app.kubernetes.io/part-of: observatorium
